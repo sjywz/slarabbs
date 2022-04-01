@@ -17876,3 +17876,40 @@ body {
 .notification-badge .badge-hint {
   background-color: #d15b47 !important;
 }
+
+/** 样式调整 */
+.navbar-expand-lg .navbar-collapse {
+  justify-content: space-between;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.active-users .media {
+  display: flex;
+}
+.active-users .media .media-body {
+  margin-left: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.list-unstyled .media {
+  display: flex;
+  align-items: center;
+}
+.list-unstyled .media .media-left {
+  margin-right: 20px;
+}
+.list-unstyled .media .media-heading {
+  display: flex;
+  align-items: center;
+}
