@@ -10,8 +10,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Auth;
 use Spatie\Permission\Traits\HasRoles;
-
-class User extends Authenticatable implements MustVerifyEmail
+use Tymon\JWTAuth\Contracts\JWTSubject;
+class User extends Authenticatable implements MustVerifyEmail,JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable, MustVerifyEmailTrait;
 
@@ -121,4 +121,13 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->attributes['avatar'] = $path;
     }
 
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }
