@@ -44,6 +44,9 @@ Route::prefix('v1')
                 // 某个用户发布的话题
                 Route::get('users/{user}/topics', 'TopicsController@userIndex')
                     ->name('users.topics.index');
+                // 全部话题
+                Route::get('topics', 'TopicsController@index')
+                    ->name('topics.index');
 
                 // 登录后可以访问的接口
                 Route::middleware('auth:api')->group(function() {
@@ -58,7 +61,7 @@ Route::prefix('v1')
                         ->name('images.store');
                     // 发布话题
                     Route::resource('topics', 'TopicsController')->only([
-                        'store', 'update', 'destroy', 'index'
+                        'store', 'update', 'destroy'
                     ]);
                 });
             });
