@@ -32,11 +32,13 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
         'password',
         'introduction',
         'avatar',
-        'phone'
+        'weixin_openid',
+        'weixin_unionid'
     ];
 
     /**
