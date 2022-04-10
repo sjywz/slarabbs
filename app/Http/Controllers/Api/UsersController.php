@@ -65,6 +65,7 @@ class UsersController extends Controller
 
     public function activedIndex(User $user)
     {
+        // return $this->errorResponse(403, '您还没有通过认证');
         UserResource::wrap('data');
         return UserResource::collection($user->getActiveUsers());
     }
