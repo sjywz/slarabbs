@@ -232,5 +232,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
+    App\Providers\EasySmsServiceProvider::class,
+    App\Providers\JpushServiceProvider::class,
 ];
